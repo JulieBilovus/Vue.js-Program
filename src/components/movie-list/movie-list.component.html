@@ -1,3 +1,32 @@
-<div class="movie-list"> 
-    <h1>movie-listComponent</h1>
+<div class="movie-list wrapper">
+    <div class="container">
+        <div class="movie-list_header">
+            <FilterButtons :label="label"
+                           :buttonsSet="buttonsSet"
+                           :callback="sortMovies">
+            </FilterButtons>
+        </div>
+        <div class="movie-list_movies">
+            <div class="movie-list_movie__movie-info"
+                 v-for="movie in movies"
+                 :key="movie.name">
+                <div class="movie-info_poster">
+                    <img :src="movie.posterPath">
+                </div>
+                <div class="movie-info_text">
+                    <div>
+                        <h3>
+                            {{movie.name}}
+                        </h3>
+                        <h4>
+                            {{movie.gengre.join(' & ')}}
+                        </h4>
+                    </div>
+                    <div>
+                        {{movie.year}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

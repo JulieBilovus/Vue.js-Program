@@ -1,0 +1,14 @@
+<div class="filter-buttons">
+    <div class="filter-buttons_label">
+        {{ label }}
+    </div>
+    <div class="filter-buttons_list">
+        <ul>
+            <li v-for="button in buttonsSet"
+                class="filter-buttons_btn__inactive"
+                @click="callback(button.filterField)">
+                {{button.label}}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,3 +1,12 @@
-<div class="header"> 
-    <h1>headerComponent</h1>
+<div class="header wrapper">
+    <div class="container">
+        <div class="header_top-part">
+            <div class="logo">
+                <span class="logo_first-part">netflix</span>roulette
+            </div>
+            <div class="search"></div>
+            <SearchMovie></SearchMovie>
+            <MovieFullInfo :movieInfo="movieInfo"></MovieFullInfo>
+        </div>
+    </div>
 </div>
