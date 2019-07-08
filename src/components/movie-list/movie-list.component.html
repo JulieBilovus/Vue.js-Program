@@ -7,26 +7,11 @@
             </FilterButtons>
         </div>
         <div class="movie-list_movies">
-            <div class="movie-list_movie__movie-info"
+            <MovieItem
                  v-for="movie in movies"
-                 :key="movie.name">
-                <div class="movie-info_poster">
-                    <img :src="movie.posterPath">
-                </div>
-                <div class="movie-info_text">
-                    <div>
-                        <h3>
-                            {{movie.name}}
-                        </h3>
-                        <h4>
-                            {{movie.gengre.join(' & ')}}
-                        </h4>
-                    </div>
-                    <div>
-                        {{movie.year}}
-                    </div>
-                </div>
-            </div>
+                 :key="movie.name"
+                 :movie="movie">
+            </MovieItem>
         </div>
     </div>
 </div>

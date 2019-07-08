@@ -3,8 +3,10 @@
         Find your movie
     </h1>
     <div class="header_search__from">
-        <input type="text">
-        <button class="serch_btn search-icon"></button>
+        <input type="text"
+               v-model="fieldValue"
+               @keyup.enter="runSearch()">
+        <button class="serch_btn search-icon" @click="runSearch()"></button>
     </div>
     <FilterButtons :label="label"
                    :buttonsSet="buttonsSet"

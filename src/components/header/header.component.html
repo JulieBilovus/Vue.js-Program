@@ -5,8 +5,10 @@
                 <span class="logo_first-part">netflix</span>roulette
             </div>
             <div class="search"></div>
-            <SearchMovie></SearchMovie>
-            <MovieFullInfo :movieInfo="movieInfo"></MovieFullInfo>
+            <SearchMovie v-if="!Object.keys(movieInfo).length"></SearchMovie>
+            <MovieFullInfo v-if="Object.keys(movieInfo).length"
+                           :movieInfo="movieInfo">
+            </MovieFullInfo>
         </div>
     </div>
 </div>

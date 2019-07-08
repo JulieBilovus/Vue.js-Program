@@ -1,5 +1,6 @@
 <div class="movie-full-info">
-    <div class="go-to-search-block search-icon"></div>
+    <div class="go-to-search-block search-icon"
+         @click="clearCurrentMovie()"></div>
     <div class="movie-full-info_block">
         <div class="movie-full-info_block__poster">
             <img :src="movieInfo.posterPath">
