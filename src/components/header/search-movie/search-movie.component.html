@@ -2,11 +2,11 @@
     <h1>
         Find your movie
     </h1>
-    <div class="header_search__from">
+    <div class="search-movie__form">
         <input type="text"
                v-model="fieldValue"
                @keyup.enter="runSearch()">
-        <button class="serch_btn search-icon" @click="runSearch()"></button>
+        <button class="serch_btn" @click="runSearch()">Search</button>
     </div>
     <FilterButtons :label="label"
                    :buttonsSet="buttonsSet"

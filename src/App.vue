@@ -37,6 +37,16 @@
 
     h1 {
       font-size: 38px;
+      font-weight: 300;
+    }
+
+    .container {
+      position: relative;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo {
