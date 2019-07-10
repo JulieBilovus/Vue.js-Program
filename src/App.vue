@@ -43,14 +43,6 @@
       font-weight: 300;
     }
 
-    .logo {
-      color: @red;
-      font-size: 24px;
-      &_first-part {
-        font-weight: 900;
-      }
-    }
-
     button {
       color: @whiteText;
       border: none;

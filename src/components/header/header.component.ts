@@ -2,6 +2,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import WithRender from './header.component.html';
 import SearchMovie from '@/components/header/search-movie/search-movie.component';
 import MovieFullInfo from '@/components/header/movie-full-info/movie-full-info.component';
+import Logo from '@/components/logo/logo.component';
 import { store, storeMutations } from '@/observableData';
 import { IMovieDataFields } from '@/types';
 
@@ -10,6 +11,7 @@ require('./header.component.less');
 @WithRender
 @Component({
   components: {
+    Logo,
     SearchMovie,
     MovieFullInfo
   }

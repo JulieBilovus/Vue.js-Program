@@ -6,12 +6,15 @@
                            :callback="sortMovies">
             </FilterButtons>
         </div>
-        <div class="movie-list_movies">
+        <div class="movie-list_movies" v-if="movies.length">
             <MovieItem
                  v-for="movie in movies"
                  :key="movie.name"
                  :movie="movie">
             </MovieItem>
+        </div>
+        <div class="movie-list_empty" v-else>
+            No films found
         </div>
     </div>
 </div>

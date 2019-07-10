@@ -1,9 +1,15 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import WithRender from './footer.component.html';
+import Logo from '@/components/logo/logo.component';
 
-@Component({})
-export default class FooterComponent extends Vue {
-  static mounted() {
-    console.log('hello from app');
+require('./footer.component.less');
+
+@WithRender
+@Component({
+  components: {
+    Logo,
   }
-}
+})
+export default class Footer extends Vue {}
+
