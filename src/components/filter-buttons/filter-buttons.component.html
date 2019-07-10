@@ -4,10 +4,11 @@
     </div>
     <div class="filter-buttons_list">
         <ul>
-            <li v-for="button in buttonsSet"
-                class="filter-buttons_btn__inactive"
-                @click="callback(button.filterField)">
-                {{button.label}}
+            <li v-for="button in buttonsSet">
+                <button class="filter-buttons_btn__inactive"
+                        @click="callback(button.filterField)">
+                    {{button.label}}
+                </button>
             </li>
         </ul>
     </div>

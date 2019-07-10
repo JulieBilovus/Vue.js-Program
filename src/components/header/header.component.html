@@ -1,6 +1,6 @@
 <div class="header wrapper">
     <div class="container">
-        <div class="logo">
+        <div class="logo" @click="clearFilters()">
             <span class="logo_first-part">netflix</span>roulette
         </div>
         <SearchMovie v-if="!Object.keys(movieInfo).length"></SearchMovie>
