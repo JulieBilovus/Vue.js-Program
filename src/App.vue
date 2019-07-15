@@ -9,6 +9,10 @@
 </template>
 
 <style lang="less">
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     padding: 0;

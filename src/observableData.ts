@@ -81,3 +81,9 @@ export const storeMutations = {
     store.findedMovies = [...movies];
   },
 };
+
+export const getters = {
+  getMoviesLength() {
+    return store.movies.length;
+  }
+}

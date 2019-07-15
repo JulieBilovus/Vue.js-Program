@@ -4,9 +4,10 @@
     </div>
     <div class="filter-buttons_list">
         <ul>
-            <li v-for="button in buttonsSet">
-                <button class="filter-buttons_btn__inactive"
-                        @click="callback(button.filterField)">
+            <li v-for="(button, index) in buttonsSet">
+                <button :class="{'filter-buttons_btn__inactive': activeButtonIndex !== index,
+                                'filter-buttons_btn__active': activeButtonIndex === index}"
+                        @click="runCallback(button.filterField, index)">
                     {{button.label}}
                 </button>
             </li>

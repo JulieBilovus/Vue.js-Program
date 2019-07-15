@@ -1,36 +1,73 @@
 .search-movie {
   width: 90%;
-  padding: 40px 0;
+  padding: 70px 0;
   margin: 0 auto;
 
   &__form {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
     font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    &.show-movie-list{
+      background: none;
+
+      input {
+        background: rgba(0, 0, 0, 0.5);
+        width: 79%;
+      }
+
+      .search_btn {
+        background: @red;
+        width: 20%;
+
+        span {
+          display: inline;
+        }
+      }
+
+    }
+
+    &.empty-movie-list{
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+
+      input {
+        background: none;
+        width: calc(100% - 30px);
+      }
+
+      .search_btn {
+        .addIcon(@red, "../../../assets/search.svg", 35px, 35px);
+
+        span {
+          display: none;
+        }
+      }
+    }
 
     input {
-      padding: 15px;
+      padding: 0 15px;
       font-size: 18px;
       border: none;
       outline: none;
       background: none;
       display: inline-block;
-      width: calc(100% - 60px);
       color: @whiteText;
       border-radius: 3px;
+      box-sizing: border-box;
     }
 
-    .serch_btn {
+    .search_btn {
       color: @whiteText;
-      background: @red;
       display: inline-block;
-      width: 20%;
       padding: 15px 20px;
       font-size: 18px;
       font-weight: 200;
       text-transform: uppercase;
       border: none;
-      border-radius: 3px;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
 }

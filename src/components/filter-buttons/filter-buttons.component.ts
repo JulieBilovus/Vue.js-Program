@@ -16,4 +16,14 @@ export default class FilterButtons extends Vue {
 
   @Prop()
   callback: Function | undefined;
+
+  public activeButtonIndex = 0;
+
+  public runCallback(filterField: string, index: number) {
+    if(this.callback) {
+      this.callback(filterField);
+    }
+
+    this.activeButtonIndex = index;
+  }
 }

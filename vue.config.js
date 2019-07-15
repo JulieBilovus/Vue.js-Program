@@ -20,7 +20,19 @@ module.exports = {
               injector: 'append'
             }
           }],
-        },
+        }, {
+          test: /\.ts$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'ts-loader',
+              options: {
+                appendTsSuffixTo: [/\.vue$/],
+                transpileOnly: true // used with ForkTsCheckerWebpackPlugin
+              },
+            }
+          ],
+        }
       ]
     }
   },

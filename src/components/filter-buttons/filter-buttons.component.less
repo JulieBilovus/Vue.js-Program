@@ -1,4 +1,37 @@
 .filter-buttons {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 16px;
+  margin: 20px 0;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+
+  li:first-child button{
+    border-radius: 5px 0 0 5px;
+  }
+
+  li:last-child button{
+    border-radius: 0 5px 5px 0;
+  }
+
+  button {
+    color: @whiteText;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 200;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+  }
+
   &_btn {
     &__active {
       background: @red;
@@ -10,5 +43,9 @@
     &__inactive:hover {
       color: @red;
     }
+  }
+
+  &_label {
+    margin-right: 20px;
   }
 }

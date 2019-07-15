@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import FilterButtons from '@/components/filter-buttons/filter-buttons.component';
 import WithRender from './search-movie.component.html';
 import { IButtonProps, MovieDataFieldsEnum } from '@/types';
-import { storeMutations } from '@/observableData';
+import { storeMutations, getters } from '@/observableData';
 
 require('./search-movie.component.less');
 
@@ -14,6 +14,10 @@ require('./search-movie.component.less');
   }
 })
 export default class SearchMovie extends Vue {
+  get moviesLength() {
+    return getters.getMoviesLength();
+  }
+
   public label = 'Search By';
 
   public buttonsSet: Array<IButtonProps> = [
