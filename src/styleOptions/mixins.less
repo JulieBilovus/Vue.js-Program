@@ -1,0 +1,12 @@
+.addIcon(@color, @url, @width, @height) {
+  width: @width;
+  height: @height;
+  background-color: @color;
+  -webkit-mask:  url(@url) no-repeat 50% 50%;
+  mask: url(@url) no-repeat 50% 50%;
+  background-size: @width @height;
+  vertical-align: middle;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

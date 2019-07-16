@@ -1,3 +1,20 @@
-<div class="movie-list"> 
-    <h1>movie-listComponent</h1>
+<div class="movie-list wrapper">
+    <div class="container">
+        <div class="movie-list_header">
+            <FilterButtons :label="label"
+                           :buttonsSet="buttonsSet"
+                           :callback="sortMovies">
+            </FilterButtons>
+        </div>
+        <div class="movie-list_movies" v-if="movies.length">
+            <MovieItem
+                 v-for="movie in movies"
+                 :key="movie.name"
+                 :movie="movie">
+            </MovieItem>
+        </div>
+        <div class="movie-list_empty" v-else>
+            No films found
+        </div>
+    </div>
 </div>

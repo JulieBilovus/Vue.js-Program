@@ -1,3 +1,31 @@
-<div class="movie-full-info"> 
-    <h1>movie-full-infoComponent</h1>
+<div class="movie-full-info">
+    <div class="go-to-search-block search-icon"
+         @click="clearCurrentMovie()"></div>
+    <div class="movie-full-info_block">
+        <div class="movie-full-info_block__poster">
+            <img :src="movieInfo.posterPath">
+        </div>
+        <div class="movie-full-info_block__text">
+            <h1>
+                {{movieInfo.name}}
+                <span>
+                    {{movieInfo.rating}}
+                </span>
+            </h1>
+            <h2>
+                {{movieInfo.filmDirector}}
+            </h2>
+            <p>
+                <span>
+                    {{movieInfo.year}} year
+                </span>
+                <span>
+                    {{movieInfo.duration}} min
+                </span>
+            </p>
+            <p>
+                {{movieInfo.description}}
+            </p>
+        </div>
+    </div>
 </div>

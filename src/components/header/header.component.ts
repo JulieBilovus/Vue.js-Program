@@ -1,9 +1,27 @@
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component, Vue } from 'vue-property-decorator';
+import WithRender from './header.component.html';
+import SearchMovie from '@/components/header/search-movie/search-movie.component';
+import MovieFullInfo from '@/components/header/movie-full-info/movie-full-info.component';
+import Logo from '@/components/logo/logo.component';
+import { store, storeMutations } from '@/observableData';
+import { IMovieDataFields } from '@/types';
 
-@Component({})
-export default class HeaderComponent extends Vue {
-  static mounted() {
-    console.log('hello from app');
+require('./header.component.less');
+
+@WithRender
+@Component({
+  components: {
+    Logo,
+    SearchMovie,
+    MovieFullInfo
+  }
+})
+export default class Header extends Vue {
+  get movieInfo(): IMovieDataFields {
+    return <IMovieDataFields>store.selectedMovie;
+  }
+
+  public clearFilters() {
+    storeMutations.setAllMovies();
   }
 }
