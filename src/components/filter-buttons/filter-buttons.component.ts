@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { IButtonProps } from '@/types';
 import WithRender from './filter-buttons.component.html';
+import {defaults} from "ts-jest/presets";
 require('./filter-buttons.component.less');
 
 @WithRender
@@ -19,11 +20,9 @@ export default class FilterButtons extends Vue {
 
   public activeButtonIndex = 0;
 
-  public runCallback(filterField: string, index: number) {
-    if(this.callback) {
-      this.callback(filterField);
-    }
-
+  public runCallback(index: number) {
     this.activeButtonIndex = index;
+
+    this.$emit('changeFieldName', this.activeButtonIndex);
   }
 }

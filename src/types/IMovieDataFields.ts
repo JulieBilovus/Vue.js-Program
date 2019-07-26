@@ -1,15 +1,4 @@
-import { GengreTypesEnum } from '@/types/GengreTypesEnum';
-
 export interface IMovieDataFields {
-  // name: string;
-  // rating: number;
-  // filmDirector: string;
-  // duration: number;
-  // year: number;
-  // description: string;
-  // gengre: Array<GengreTypesEnum>;
-  // posterPath: string;
-
   id: number;
   title: string;
   tagline: string;
@@ -17,9 +6,9 @@ export interface IMovieDataFields {
   'vote_count': number;
   'release_date': string;
   'poster_path': string;
-  overview: 'Plot unknown.';
+  overview: string;
   budget: number;
   revenue: number;
-  genres: Array<GengreTypesEnum>;
-  runtime: number;
+  genres: Array<string>;
+  runtime: number | null;
 }

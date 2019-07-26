@@ -7,7 +7,7 @@
             <li v-for="(button, index) in buttonsSet">
                 <button :class="{'filter-buttons_btn__inactive': activeButtonIndex !== index,
                                 'filter-buttons_btn__active': activeButtonIndex === index}"
-                        @click="runCallback(button.filterField, index)">
+                        @click="runCallback(button.filterField)">
                     {{button.label}}
                 </button>
             </li>

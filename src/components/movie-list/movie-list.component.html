@@ -3,10 +3,10 @@
         <div class="movie-list_header">
             <FilterButtons :label="label"
                            :buttonsSet="buttonsSet"
-                           :callback="sortMovies">
+                           @changeFieldName="sortMovies">
             </FilterButtons>
         </div>
-        <div class="movie-list_movies" v-if="movies.length">
+        <div class="movie-list_movies" v-if="moviesCount">
             <MovieItem
                  v-for="movie in movies"
                  :key="movie.name"

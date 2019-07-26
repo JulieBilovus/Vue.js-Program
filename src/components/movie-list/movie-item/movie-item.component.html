@@ -1,19 +1,19 @@
 <div class="movie-item"
      @click="setCurrentMovie(movie)">
     <div class="movie-info_poster">
-        <img :src="movie.posterPath">
+        <img :src="movie['poster_path']">
     </div>
     <div class="movie-info_text">
         <div>
             <h3>
-                {{movie.name}}
+                {{movie.title}}
             </h3>
             <h4>
-                {{movie.gengre.join(' & ')}}
+                {{movie.genres.join(' & ')}}
             </h4>
         </div>
         <div>
-            {{movie.year}}
+            {{new Date(movie.release_date).getFullYear()}}
         </div>
     </div>
 </div>

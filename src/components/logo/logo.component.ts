@@ -9,13 +9,11 @@ require('./logo.component.less');
 @Component({})
 export default class Logo extends Vue {
   @Prop()
-  callback: Function | undefined;
-
-  public isLink = !!this.callback;
+  isLink: boolean | undefined;
 
   public callbackCall() {
-    if (this.callback) {
-      this.callback();
+    if (this.isLink) {
+      this.$emit('logoClick');
     }
   }
 }

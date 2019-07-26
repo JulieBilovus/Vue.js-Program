@@ -1,7 +1,7 @@
 <div class="header wrapper">
     <div class="blured-header wrapper"></div>
     <div class="container">
-        <Logo :callback="clearFilters"></Logo>
+        <Logo isLink="true" @logoClick="clearFilters"></Logo>
         <SearchMovie v-if="!Object.keys(movieInfo).length"></SearchMovie>
         <MovieFullInfo v-if="Object.keys(movieInfo).length"
                        :movieInfo="movieInfo">

@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import {IMovieDataFields, MovieDataFieldsEnum} from '@/types';
+import {store} from "@/observableData";
 
 Vue.use(Vuex);
 
@@ -193,7 +195,18 @@ const data = [
 
 export default new Vuex.Store({
   state: {
+    movies: [...data],
+    selectedMovie: <IMovieDataFields>{},
+    findedMovies: <Array<IMovieDataFields>>[]
+  },
+  getters: {
+    getSortedMovies(state) {
+      return state.movies;
+    },
 
+    getMoviesCount(state) {
+      return state.movies.length;
+    }
   },
   mutations: {
 

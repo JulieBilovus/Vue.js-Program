@@ -5,6 +5,7 @@ import { IButtonProps, IMovieDataFields, MovieDataFieldsEnum } from '@/types';
 import { store, storeMutations } from '@/observableData';
 import FilterButtons from '@/components/filter-buttons/filter-buttons.component';
 import MovieItem from '@/components/movie-list/movie-item/movie-item.component';
+import { mapGetters } from "vuex";
 
 require('./movie-list.component.less');
 
@@ -13,7 +14,11 @@ require('./movie-list.component.less');
   components: {
     FilterButtons,
     MovieItem
-  }
+  },
+  computed: mapGetters({
+    movies: 'getSortedMovies',
+    moviesCount: 'getMoviesCount'
+  })
 })
 export default class MovieList extends Vue {
   public label = 'Sort By';
@@ -21,18 +26,14 @@ export default class MovieList extends Vue {
   public buttonsSet: Array<IButtonProps> = [
     {
       label: 'Release Date',
-      filterField: MovieDataFieldsEnum.year,
+      filterField: MovieDataFieldsEnum.release_date,
     }, {
       label: 'Rating',
-      filterField: MovieDataFieldsEnum.rating
+      filterField: MovieDataFieldsEnum.vote_average
     }
   ];
 
-  get movies(): Array<IMovieDataFields> {
-    return store.movies;
-  }
-
-  public sortMovies(sortField: MovieDataFieldsEnum) {
-    storeMutations.filterMovies(sortField);
+  public sortMovies(filterFieldIndex: number) {
+    storeMutations.filterMovies(this.buttonsSet[filterFieldIndex].filterField);
   }
 }

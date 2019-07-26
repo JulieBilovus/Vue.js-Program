@@ -23,24 +23,24 @@ export default class SearchMovie extends Vue {
   public buttonsSet: Array<IButtonProps> = [
     {
       label: 'Title',
-      filterField: MovieDataFieldsEnum.name,
+      filterField: MovieDataFieldsEnum.title,
     }, {
       label: 'Gengre',
-      filterField: MovieDataFieldsEnum.gengre
+      filterField: MovieDataFieldsEnum.genres
     }
   ];
 
   public fieldValue = '';
 
-  public searchField = MovieDataFieldsEnum.name;
+  public searchField = MovieDataFieldsEnum.title;
 
   public searchMovies(filterField: MovieDataFieldsEnum) {
     this.searchField = filterField;
   }
 
-  public runSearch() {
+  public runSearch(filterFieldIndex: number) {
     if (this.fieldValue.length) {
-      storeMutations.searchMovies(this.fieldValue.toLocaleLowerCase(), this.searchField);
+      storeMutations.searchMovies(this.fieldValue.toLocaleLowerCase(), this.buttonsSet[filterFieldIndex].filterField);
     } else {
       storeMutations.setAllMovies();
     }

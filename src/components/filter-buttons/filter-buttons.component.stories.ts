@@ -15,10 +15,10 @@ storiesOf("FilterButtons", module).add("to Storybook", () => ({
       buttonsSet: [
         {
           label: 'Title',
-          filterField: MovieDataFieldsEnum.name,
+          filterField: MovieDataFieldsEnum.title,
         }, {
           label: 'Gengre',
-          filterField: MovieDataFieldsEnum.gengre
+          filterField: MovieDataFieldsEnum.genres
         }
       ]
     };

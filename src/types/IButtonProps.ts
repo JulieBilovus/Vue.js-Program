@@ -1,4 +1,4 @@
-import {MovieDataFieldsEnum} from "@/types/MovieDataFieldsEnum";
+import {MovieDataFieldsEnum} from '@/types/MovieDataFieldsEnum';
 
 export interface IButtonProps {
   label: string;

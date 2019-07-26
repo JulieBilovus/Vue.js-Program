@@ -13,6 +13,6 @@
     </div>
     <FilterButtons :label="label"
                    :buttonsSet="buttonsSet"
-                   :callback="searchMovies">
+                   @changeFieldName="searchMovies">
     </FilterButtons>
 </div>
